@@ -10,6 +10,6 @@ export class AppComponent {
   title: string;
  
   constructor() {
-    this.title = 'Angular with Spring Boot App';
+    this.title = 'List Of SuperCars';
   }
 }
