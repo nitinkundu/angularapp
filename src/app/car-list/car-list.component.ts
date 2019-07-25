@@ -20,7 +20,9 @@ export class CarListComponent implements OnInit {
  
   ngOnInit() {
    
-
+this.carService.findAll().subscribe(data => {
+      this.car = data;
+    });
 
     this.configService.getConfig().subscribe(data => {
       this.employees = data
