@@ -9,14 +9,14 @@ import { CarService } from '../car.service';
 })
 export class CarListComponent implements OnInit {
  
-  car: Car[];
+  cars: Car[];
  
   constructor(private carService: CarService) {
   }
  
   ngOnInit() {
     this.carService.findAll().subscribe(data => {
-      this.car = data;
+      this.cars = data;
      console.log(this.car);
     });
   }
