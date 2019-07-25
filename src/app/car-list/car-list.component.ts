@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../car';
-
-import { ConfigService } from "../config/service"
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
-
+import { CarService } from '../car.service';
  
 @Component({
   selector: 'app-car-list',
@@ -13,23 +10,13 @@ import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 export class CarListComponent implements OnInit {
  
   car: Car[];
-  employees: any;
  
-  constructor( private configService: ConfigService) {
+  constructor(private carService: CarService) {
   }
  
   ngOnInit() {
-   
-this.carService.findAll().subscribe(data => {
+    this.carService.findAll().subscribe(data => {
       this.car = data;
     });
-
-    this.configService.getConfig().subscribe(data => {
-      this.employees = data
-  console.log("Response",data)
-  console.log("Employees", this.employees)
-
-    })
-  console.log(this.employees)
   }
 }
