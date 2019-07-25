@@ -1,5 +1,5 @@
 export class Car {
-    id: string;
-    company: string;
-    model: string;
+
+    name: string;
+    age: number;
 }
