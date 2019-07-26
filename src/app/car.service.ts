@@ -9,7 +9,7 @@ export class CarService {
   private carUrl: string;
  
   constructor(private http: HttpClient) {
-    this.carUrl = 'http://ec2-18-224-182-74.us-east-2.compute.amazonaws.com:8080/superemp/employees';
+    this.carUrl = 'http://ec2-18-188-202-13.us-east-2.compute.amazonaws.com:8080/superemp/employees';
   }
  
   public findAll(): Observable<Car[]> {
