@@ -6,7 +6,7 @@
     "start": "ng serve --port 4229",
     "build": "ng build",
     "sonar": "sonar-scanner",
-    "test": "ng test",
+    "test": "ng test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
