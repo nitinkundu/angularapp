@@ -10,6 +10,6 @@ export class AppComponent {
   title: string;
  
   constructor() {
-    this.title = 'List Of SuperEmployees';
+    this.title = 'List Of Employees';
   }
 }
