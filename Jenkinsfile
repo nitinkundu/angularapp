@@ -14,11 +14,11 @@ pipeline
                sh 'npm install'
             }
         }
-          stage('test') {
+         /* stage('test') {
               steps {
                  sh 'npm run test'
               }
-         }
+         }*/
        /* stage('SonarQube') {    
               steps {
               sh 'npm install sonarqube-scanner --save-dev'
