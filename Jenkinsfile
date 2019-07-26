@@ -14,29 +14,16 @@ pipeline
                sh 'npm install'
             }
         }
-          /*stage('test') {
+          stage('test') {
               steps {
                  sh 'npm run test'
               }
-         }*/
-       /* stage('SonarQube') 
-       {
-           
-            environment {
-                scannerHome=tool 'sonar scanner'
-            }
-             //tools {scannerHome "SonarScanner"}
-        steps{
-             withSonarQubeEnv(credentialsId: 'sonar_token_ankush', installationName: 'sonar_server') {
-                  sh '${scannerHome}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
-              }
-              //sh 'npm run sonar'
-           
-            //timeout(time: 1, unit: 'HOURS') {
-                //waitForQualityGate abortPipeline: true
-            //}
+         }
+       /* stage('SonarQube') {    
+              steps {
+              sh 'npm install sonarqube-scanner --save-dev'
+              sh 'npm run sonar' 
            }
-            
         }*/          
       
        
