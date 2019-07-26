@@ -52,17 +52,15 @@ pipeline
                 sh 'cd dist/angularclient; zip -r ../../abcApp.zip . ;'
             }
         }
-        /*stage ('Uploading artifact to nexus'){
+        stage ('Nexus'){
             steps{
                 sh 'ls'
-                withCredentials([usernamePassword(credentialsId: 'ankush_nexus_key', passwordVariable: 'ankush_nexus_password', usernameVariable: 'ankush_nexus')]) {
-                 sh label: '', script: 'curl -v -u ${ankush_nexus}:${ankush_nexus_password} --upload-file ankushApp.zip http://3.14.251.87:8081/nexus/content/repositories/devopstraining/ankushApp/ankush-${BUILD_NUMBER}.zip'
-                 
+                withCredentials([usernamePassword(credentialsId: 'sudipa_nexus', passwordVariable: 'pass', usernameVariable: 'usr')]) {
+                 sh label: '', script: 'curl -u ${usr}:${pass} --upload-file abcApp.zip http://ec2-3-17-164-37.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/Frontend_Angular/abcApp.zip'
                 }
-               
+                
             }
-        }*/
-      
+        }
         stage ('Deploy') {
             steps {
               withCredentials([file(credentialsId: 'angular-react-deployment-server', variable: 'deployment_server')]) {
